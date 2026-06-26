@@ -1,0 +1,5 @@
+<div class="mb-4"><x-input-label for="name" value="Nama" /><x-text-input id="name" name="name" class="mt-1 block w-full" value="{{ old('name', $item->name ?? '') }}" required /></div>
+<div class="mb-4"><x-input-label for="email" value="Email" /><x-text-input id="email" name="email" type="email" class="mt-1 block w-full" value="{{ old('email', $item->email ?? '') }}" required /></div>
+<div class="mb-4"><x-input-label for="password" value="Password" /><x-text-input id="password" name="password" type="password" class="mt-1 block w-full" /></div>
+<div class="mb-4"><x-input-label for="password_confirmation" value="Konfirmasi Password" /><x-text-input id="password_confirmation" name="password_confirmation" type="password" class="mt-1 block w-full" /></div>
+<div class="mb-4"><x-input-label value="Role" /><select name="role" class="mt-1 block w-full border-gray-300 rounded-md" required>@foreach($roles as $role)<option value="{{ $role->name }}" @selected(old('role', $item->roles->first()?->name ?? '') == $role->name)>{{ $role->name }}</option>@endforeach</select></div>

@@ -1,0 +1,11 @@
+<div class="mb-4"><x-input-label value="Kelas" /><select name="class_id" class="mt-1 block w-full border-gray-300 rounded-md"><option value="">-</option>@foreach($classes as $c)<option value="{{ $c->id }}" @selected(old('class_id', $item->class_id ?? '') == $c->id)>{{ $c->name }}</option>@endforeach</select></div>
+<div class="mb-4"><x-input-label for="nis" value="NIS" /><x-text-input id="nis" name="nis" class="mt-1 block w-full" value="{{ old('nis', $item->nis ?? '') }}" required /></div>
+<div class="mb-4"><x-input-label for="nisn" value="NISN" /><x-text-input id="nisn" name="nisn" class="mt-1 block w-full" value="{{ old('nisn', $item->nisn ?? '') }}" /></div>
+<div class="mb-4"><x-input-label for="name" value="Nama" /><x-text-input id="name" name="name" class="mt-1 block w-full" value="{{ old('name', $item->name ?? '') }}" required /></div>
+<div class="mb-4"><x-input-label for="gender" value="Jenis Kelamin" /><select name="gender" class="mt-1 block w-full border-gray-300 rounded-md"><option value="">-</option><option value="male" @selected(old('gender', $item->gender ?? '') == 'male')>Laki-laki</option><option value="female" @selected(old('gender', $item->gender ?? '') == 'female')>Perempuan</option></select></div>
+<div class="mb-4"><x-input-label for="photo" value="Foto" /><input type="file" name="photo" class="mt-1 block w-full" accept="image/*" /></div>
+<h3 class="font-semibold mt-6 mb-2">Biodata</h3>
+<div class="mb-4"><x-input-label value="Golongan Darah" /><x-text-input name="biodata[blood_type]" class="mt-1 block w-full" value="{{ old('biodata.blood_type', $item->biodata->blood_type ?? '') }}" /></div>
+<div class="mb-4"><x-input-label value="Tinggi (cm)" /><x-text-input name="biodata[height]" type="number" class="mt-1 block w-full" value="{{ old('biodata.height', $item->biodata->height ?? '') }}" /></div>
+<div class="mb-4"><x-input-label value="Berat (kg)" /><x-text-input name="biodata[weight]" type="number" class="mt-1 block w-full" value="{{ old('biodata.weight', $item->biodata->weight ?? '') }}" /></div>
+<div class="mb-4"><x-input-label value="Catatan" /><textarea name="biodata[notes]" class="mt-1 block w-full border-gray-300 rounded-md">{{ old('biodata.notes', $item->biodata->notes ?? '') }}</textarea></div>

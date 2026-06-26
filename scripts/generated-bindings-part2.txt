@@ -1,0 +1,2 @@
+\App\Repositories\Contracts\SchoolRepositoryInterface::class => \App\Repositories\Eloquent\SchoolRepository::class
+\App\Repositories\Contracts\SchoolClassRepositoryInterface::class => \App\Repositories\Eloquent\SchoolClassRepository::class

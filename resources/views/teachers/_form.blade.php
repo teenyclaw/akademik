@@ -1,0 +1,6 @@
+<div class="mb-4"><x-input-label for="nip" value="NIP" /><x-text-input id="nip" name="nip" class="mt-1 block w-full" value="{{ old('nip', $item->nip ?? '') }}" /></div>
+<div class="mb-4"><x-input-label for="name" value="Nama" /><x-text-input id="name" name="name" class="mt-1 block w-full" value="{{ old('name', $item->name ?? '') }}" required /></div>
+<div class="mb-4"><x-input-label for="gender" value="Jenis Kelamin" /><select id="gender" name="gender" class="mt-1 block w-full border-gray-300 rounded-md"><option value="">-</option><option value="male" @selected(old('gender', $item->gender ?? '') == 'male')>Laki-laki</option><option value="female" @selected(old('gender', $item->gender ?? '') == 'female')>Perempuan</option></select></div>
+<div class="mb-4"><x-input-label for="phone" value="Telepon" /><x-text-input id="phone" name="phone" class="mt-1 block w-full" value="{{ old('phone', $item->phone ?? '') }}" /></div>
+<div class="mb-4"><x-input-label for="specialization" value="Spesialisasi" /><x-text-input id="specialization" name="specialization" class="mt-1 block w-full" value="{{ old('specialization', $item->specialization ?? '') }}" /></div>
+<div class="mb-4"><x-input-label for="photo" value="Foto" /><input type="file" id="photo" name="photo" class="mt-1 block w-full" accept="image/*" /></div>

@@ -1,0 +1,3 @@
+<div class="mb-4"><x-input-label value="Tugas" /><select name="assignment_id" class="mt-1 block w-full border-gray-300 rounded-md" required>@foreach($assignments as $a)<option value="{{ $a->id }}" @selected(old('assignment_id', $item->assignment_id ?? '') == $a->id)>{{ $a->title }}</option>@endforeach</select></div>
+<div class="mb-4"><x-input-label value="Siswa" /><select name="student_id" class="mt-1 block w-full border-gray-300 rounded-md" required>@foreach($students as $s)<option value="{{ $s->id }}" @selected(old('student_id', $item->student_id ?? '') == $s->id)>{{ $s->name }}</option>@endforeach</select></div>
+<div class="mb-4"><x-input-label for="file" value="File" /><input type="file" id="file" name="file" class="mt-1 block w-full" /></div>

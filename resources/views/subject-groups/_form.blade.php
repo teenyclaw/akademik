@@ -1,0 +1,2 @@
+<div class="mb-4"><x-input-label for="name" value="Name" /><x-text-input id="name" name="name" type="text" class="mt-1 block w-full" value="{{ old('name', $item->name ?? '') }}" /><x-input-error :messages="$errors->get('name')" /></div>
+<div class="mb-4"><x-input-label for="code" value="Code" /><x-text-input id="code" name="code" type="text" class="mt-1 block w-full" value="{{ old('code', $item->code ?? '') }}" /><x-input-error :messages="$errors->get('code')" /></div>

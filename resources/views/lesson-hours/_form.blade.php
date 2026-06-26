@@ -1,0 +1,3 @@
+<div class="mb-4"><x-input-label for="name" value="Name" /><x-text-input id="name" name="name" type="text" class="mt-1 block w-full" value="{{ old('name', $item->name ?? '') }}" /><x-input-error :messages="$errors->get('name')" /></div>
+<div class="mb-4"><x-input-label for="start_time" value="Start time" /><x-text-input id="start_time" name="start_time" type="date" class="mt-1 block w-full" value="{{ old('start_time', $item->start_time ?? '') }}" /><x-input-error :messages="$errors->get('start_time')" /></div>
+<div class="mb-4"><x-input-label for="end_time" value="End time" /><x-text-input id="end_time" name="end_time" type="date" class="mt-1 block w-full" value="{{ old('end_time', $item->end_time ?? '') }}" /><x-input-error :messages="$errors->get('end_time')" /></div>

@@ -1,0 +1,4 @@
+<div class="mb-4"><x-input-label for="name" value="Nama" /><x-text-input id="name" name="name" class="mt-1 block w-full" value="{{ old('name', $item->name ?? '') }}" required /></div>
+<div class="mb-4"><x-input-label for="phone" value="Telepon" /><x-text-input id="phone" name="phone" class="mt-1 block w-full" value="{{ old('phone', $item->phone ?? '') }}" /></div>
+<div class="mb-4"><x-input-label for="email" value="Email" /><x-text-input id="email" name="email" type="email" class="mt-1 block w-full" value="{{ old('email', $item->email ?? '') }}" /></div>
+<div class="mb-4"><x-input-label value="Siswa" /><select name="student_ids[]" multiple class="mt-1 block w-full border-gray-300 rounded-md">@foreach($students as $s)<option value="{{ $s->id }}" @selected(collect(old('student_ids', $item->students?->pluck('id') ?? []))->contains($s->id))>{{ $s->name }}</option>@endforeach</select></div>

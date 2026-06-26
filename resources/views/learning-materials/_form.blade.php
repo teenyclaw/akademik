@@ -1,0 +1,6 @@
+<div class="mb-4"><x-input-label value="Mapel" /><select name="subject_id" class="mt-1 block w-full border-gray-300 rounded-md" required>@foreach($subjects as $s)<option value="{{ $s->id }}" @selected(old('subject_id', $item->subject_id ?? '') == $s->id)>{{ $s->name }}</option>@endforeach</select></div>
+<div class="mb-4"><x-input-label value="Kelas" /><select name="class_id" class="mt-1 block w-full border-gray-300 rounded-md"><option value="">Semua Kelas</option>@foreach($classes as $c)<option value="{{ $c->id }}" @selected(old('class_id', $item->class_id ?? '') == $c->id)>{{ $c->name }}</option>@endforeach</select></div>
+<div class="mb-4"><x-input-label for="title" value="Judul" /><x-text-input id="title" name="title" class="mt-1 block w-full" value="{{ old('title', $item->title ?? '') }}" required /></div>
+<div class="mb-4"><x-input-label for="description" value="Deskripsi" /><textarea id="description" name="description" class="mt-1 block w-full border-gray-300 rounded-md">{{ old('description', $item->description ?? '') }}</textarea></div>
+<div class="mb-4"><x-input-label for="url" value="URL" /><x-text-input id="url" name="url" class="mt-1 block w-full" value="{{ old('url', $item->url ?? '') }}" /></div>
+<div class="mb-4"><x-input-label for="file" value="File" /><input type="file" id="file" name="file" class="mt-1 block w-full" /></div>
