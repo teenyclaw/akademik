@@ -27,7 +27,15 @@ Composer detected issues in your platform: Your Composer dependencies require a 
    Harus tampil `PHP 8.3.x` atau `8.4.x` dan `[OK] PHP version >= 8.3`
 6. **Hapus** `check-php.php` setelah selesai
 
-**Alternatif (jika subdomain pakai folder terpisah):**
+**Alternatif otomatis:** repo sudah menyertakan handler di `public/.htaccess`:
+
+```apache
+AddHandler application/x-httpd-ea-php83 .php
+```
+
+Setelah `git pull`, pastikan file ini ter-update. Jika host punya PHP 8.4 saja, ganti `ea-php83` → `ea-php84` di `.htaccess`.
+
+**Alternatif manual (jika subdomain pakai folder terpisah):**
 
 Edit `.htaccess` di folder **`public/`** (atau document root), tambahkan **di baris paling atas**:
 

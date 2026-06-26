@@ -50,9 +50,9 @@
             <button
                 type="button"
                 @click="open = !open"
-                class="group flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700/60"
+                class="group flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-indigo-100/70 transition hover:bg-white/10 hover:text-white"
             >
-                <span class="flex h-5 w-5 shrink-0 items-center justify-center text-gray-400 group-hover:text-indigo-600 dark:text-gray-500 dark:group-hover:text-indigo-400">
+                <span class="flex h-5 w-5 shrink-0 items-center justify-center text-indigo-300/60 group-hover:text-white">
                     <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
                     </svg>
@@ -62,7 +62,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
             </button>
-            <ul x-show="open && !sidebarCollapsed" x-cloak class="mt-1 space-y-1 border-l-2 border-indigo-100 pl-3 dark:border-indigo-900/50 ms-5">
+            <ul x-show="open && !sidebarCollapsed" x-cloak class="ms-5 mt-1 space-y-1 border-l-2 border-white/10 pl-3">
                 @can('grade-levels.view')
                     <li>
                         <x-sidebar-link
@@ -295,7 +295,7 @@
 
     @can('schools.view')
         <li class="mt-4 border-t border-gray-200 pt-4 dark:border-gray-700">
-            <p x-show="!sidebarCollapsed" x-cloak class="mb-2 px-3 text-xs font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500">
+            <p x-show="!sidebarCollapsed" x-cloak class="mb-2 px-3 text-[11px] font-bold uppercase tracking-widest text-indigo-300/40">
                 Admin
             </p>
             <x-sidebar-link :href="$routeUrl('schools.index')" :active="request()->routeIs('schools.*')">
