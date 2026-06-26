@@ -14,6 +14,18 @@ class ReportCard extends Model
 {
     use BelongsToSchool, HasAudit, HasFactory, SoftDeletes;
 
+    protected $fillable = [
+        'school_id',
+        'student_id',
+        'semester_id',
+        'class_id',
+        'homeroom_notes',
+        'status',
+        'generated_at',
+        'created_by',
+        'updated_by',
+    ];
+
     protected function casts(): array
     {
         return [

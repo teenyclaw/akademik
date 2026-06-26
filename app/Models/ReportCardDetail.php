@@ -10,6 +10,14 @@ class ReportCardDetail extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'report_card_id',
+        'subject_id',
+        'score',
+        'grade_letter',
+        'description',
+    ];
+
     protected function casts(): array
     {
         return [

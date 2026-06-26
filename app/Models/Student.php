@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Domain\Enums\StudentStatus;
 use App\Traits\BelongsToSchool;
 use App\Traits\HasAudit;
+use App\Traits\LogsModelActivity;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -12,12 +13,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Spatie\Activitylog\Support\LogOptions;
-use Spatie\Activitylog\Models\Concerns\LogsActivity;
 
 class Student extends Model
 {
-    use BelongsToSchool, HasAudit, HasFactory, LogsActivity, SoftDeletes;
+    use BelongsToSchool, HasAudit, HasFactory, LogsModelActivity, SoftDeletes;
 
     protected function casts(): array
     {
@@ -26,11 +25,6 @@ class Student extends Model
             'enrolled_at' => 'date',
             'status' => StudentStatus::class,
         ];
-    }
-
-    public function getActivitylogOptions(): LogOptions
-    {
-        return LogOptions::defaults();
     }
 
     public function schoolClass(): BelongsTo

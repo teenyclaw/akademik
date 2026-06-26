@@ -13,7 +13,7 @@ Platform web multi-sekolah untuk SD, SMP, SMA, SMK, Madrasah, Pesantren, Bimbing
 
 ## Instalasi (Laragon)
 
-**Persyaratan Node.js:** versi **18.x atau 20.x** (Laragon: Menu → Node.js → pilih v20 LTS jika tersedia).
+**Persyaratan:** PHP **8.3+** | Node.js **18.x+** (untuk `npm run build`)
 
 ```bash
 composer install
@@ -26,6 +26,12 @@ npm install && npm run build
 ```
 
 Akses via: `http://akademik.test` (atau `php artisan serve`)
+
+## Deploy ke Hosting
+
+Lihat **[docs/DEPLOY-HOSTING.md](docs/DEPLOY-HOSTING.md)** — panduan lengkap cPanel/shared hosting.
+
+**Error umum:** `proc_open is not available` → upload `vendor/` dari Laragon. `PHP >= 8.4.1` → rebuild vendor dengan PHP 8.3 (lihat DEPLOY-HOSTING.md).
 
 ## Akun Demo
 
@@ -44,10 +50,9 @@ Dashboard, Tahun Ajaran, Kelas, Siswa, Guru, Orang Tua, Mata Pelajaran, Jadwal, 
 
 ## API
 
-Prefix: `/api/v1/` — autentikasi via Sanctum token.
+Prefix: `/api/v1/` — autentikasi via Sanctum token. Nama route API: `api.v1.*` (mis. `api.v1.students.index`).
 
 ```
-POST /login (web) → buat token via Sanctum
 GET /api/v1/students
 GET /api/v1/grades
 GET /api/v1/attendances

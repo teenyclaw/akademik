@@ -5,16 +5,15 @@ namespace App\Models;
 use App\Domain\Enums\PaymentStatus;
 use App\Traits\BelongsToSchool;
 use App\Traits\HasAudit;
+use App\Traits\LogsModelActivity;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Spatie\Activitylog\Support\LogOptions;
-use Spatie\Activitylog\Models\Concerns\LogsActivity;
 
 class PaymentBill extends Model
 {
-    use BelongsToSchool, HasAudit, HasFactory, LogsActivity;
+    use BelongsToSchool, HasAudit, HasFactory, LogsModelActivity;
 
     protected function casts(): array
     {
@@ -23,11 +22,6 @@ class PaymentBill extends Model
             'due_date' => 'date',
             'status' => PaymentStatus::class,
         ];
-    }
-
-    public function getActivitylogOptions(): LogOptions
-    {
-        return LogOptions::defaults();
     }
 
     public function student(): BelongsTo
